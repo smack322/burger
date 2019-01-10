@@ -1,15 +1,32 @@
-//eat da burger
-// image of a burger
-// yellow background
-//input box
-//submit <button></button>
-//"Enter a burger you would like to eat and hit submit"
-
 <img src="https://i.dailymail.co.uk/i/pix/2013/03/28/article-2300702-18F9462D000005DC-282_306x423.jpg">
 <h2>Eat-Da-Burger</h2>
-<form>
-    <input type="text" name="burger-type">
-    <input type="submit" value="Submit">
+
+<ul>
+    {{#each burger}}
+
+    {{/each}}
+</ul>
+
+<ul>
+    {{#each burger}}
+
+    {{/each}}
+</ul>
+
+
+<form class="create-form">
+    <div class="form-group">
+        {{!-- <label for="burg">Buger Name: </label> --}}
+        <input type="text" id="burg" name="name">
+        <input type="submit" value="Submit">
+    </div>
+
+    {{!-- <div class="form-group">
+        <input type="radio" name="devoured" value="1" checked><br>
+        <input type="radio" name="devoured" value="0" devoured>
+    </div> --}}
+    {{!-- <input type="text" name="burger-type"> --}}
+    
 </form>
 <p>Enter a burger you would like to eat and hit "Submit"</p>
 
