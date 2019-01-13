@@ -1,7 +1,8 @@
+//add required dependencies
 var express = require("express");
-
 var router = express.Router();
 
+//import in database queries to use with routes
 var burger = require("../models/burger");
 
 //setup routers with logic to handle requests
@@ -17,8 +18,8 @@ router.get("/", function(req, res) {
   });
 
   router.post("/api/burgers", function(req, res) {
-     burger.insertOne(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function(result) {
-        res.json({id: result.insertId});
+     burger.insertOne(["burger_name"], [req.body.burger_name], function(data) {
+        res.redirect("/");
      });
   });
 
@@ -29,16 +30,12 @@ router.get("/", function(req, res) {
 
     burger.updateOne(
         {
-            devoured: req.body.devoured
+            devoured: true
         },
         condition,
-        function(result) {
-            if (result.changedRows === 0) {
-                return res.status(404).end();
-            }
-            res.status(200).end();
-        }
-    );
+        function(data) {
+            res.redirect("/");
+    });
   });
 
 module.exports = router;
