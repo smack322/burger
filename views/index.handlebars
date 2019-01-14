@@ -8,12 +8,13 @@
       {{#each burgers}}
       {{#unless this.devoured}}
       <div>
-        <form action="api/burgers/{{this.id}}?_method=PUT" method="POST">
-        <button type="submit" class="burgerAvailable"> {{this.burger_name}}</button>
-        </form>
+        {{!-- <form action="api/burgers/{{this.id}}?_method=PUT" method="PUT"> --}}
+        <button type="button" data-id={{this.id}} class="burgerAvailable"> {{this.burger_name}}</button>
+        {{!-- </form> --}}
       </div>
       {{/unless}}
       {{/each}}
+      {{!-- <button type="button" class="random">Test</button> --}}
     </div>
 
     <div class="col s6">
@@ -22,7 +23,7 @@
       {{#if this.devoured}}
       <div class="burgerEaten">
         <div>
-          <button type="submit" class="burgerGone">{{this.burger_name}}</button>
+          <button type="button" class="burgerGone">{{this.burger_name}}</button>
         </div>
       </div>
       {{/if}}

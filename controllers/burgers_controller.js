@@ -34,7 +34,8 @@ router.get("/", function(req, res) {
         },
         condition,
         function(data) {
-            res.redirect("/");
+          console.log(data);
+            res.json(data);
     });
   });
 
