@@ -11,7 +11,7 @@ else {
     host: "localhost",
     port: 3306,
     user: "root",
-    password: "C0deBoot",
+    password: "z",
     database: "burgers_db"
   })
 
